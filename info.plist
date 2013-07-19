@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>zkpy@zr.pbz</string>
+	<key>contactName</key>
+	<string>Max Howell</string>
+	<key>description</key>
+	<string>http://roole.org</string>
+	<key>name</key>
+	<string>Roole</string>
+	<key>uuid</key>
+	<string>1CE8827C-BC19-492C-9EBB-4C57A23FFCC3</string>
+</dict>
+</plist>
