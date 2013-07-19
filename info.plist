@@ -7,7 +7,14 @@
 	<key>contactName</key>
 	<string>Max Howell</string>
 	<key>description</key>
-	<string>http://roole.org</string>
+	<string>&lt;a href="http://rool.org"&gt;Roole&lt;/a&gt; is a language that compiles to CSS.
+
+It drew many inspirations from other CSS preprocessing languages like Sass, LESS and Stylus.
+
+The most unique feature of Roole is that it has vendor prefixing built-in, so the language stays dead simple yet being able to prefix some extremely complex rules transparently. Since Roole is also a superset of CSS, you can use it directly as a CSS prefixer.
+
+This bundle provides syntax highlighting. Contributions are very welcome and bug reports equally welcome. http://github.com/mxcl/Roole.tmBundle
+</string>
 	<key>name</key>
 	<string>Roole</string>
 	<key>uuid</key>
