@@ -60,6 +60,36 @@
 			<string>comment.block.scss</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>(@keyframes)\s+.*?\s*{</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>}</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(\d+%|from|to)\s*{</string>
+					<key>end</key>
+					<string>}</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>\@[a-z-]+</string>
 			<key>name</key>
@@ -169,7 +199,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>[a-z-]+</string>
+					<string>[a-zA-Z][A-Za-z._-]*</string>
 					<key>name</key>
 					<string>constant.numeric.css</string>
 				</dict>
