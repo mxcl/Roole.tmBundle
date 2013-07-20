@@ -48,10 +48,8 @@
 			<string>#variable_assignment</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>//.*</string>
-			<key>name</key>
-			<string>comment.line</string>
+			<key>include</key>
+			<string>#comment</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -100,6 +98,10 @@
 					<key>include</key>
 					<string>#constant</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -133,11 +135,22 @@
 					<key>include</key>
 					<string>#constant</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
 			</array>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>comment</key>
+		<dict>
+			<key>match</key>
+			<string>//.*</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
 		<key>constant</key>
 		<dict>
 			<key>patterns</key>
