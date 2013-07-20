@@ -214,7 +214,7 @@
 		<key>function</key>
 		<dict>
 			<key>begin</key>
-			<string>[a-z-]+\(</string>
+			<string>[a-zA-Z-]+\(</string>
 			<key>end</key>
 			<string>\)</string>
 			<key>name</key>
