@@ -21,12 +21,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.roole</string>
+					<string>variable.other.readwrite.roole</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.at-rule.css</string>
+					<string>keyword.control.at-rule.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -57,7 +57,7 @@
 			<key>end</key>
 			<string>\*/</string>
 			<key>name</key>
-			<string>comment.block.scss</string>
+			<string>comment.block.roole</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -67,7 +67,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.at-rule.css</string>
+					<string>keyword.control.at-rule.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -77,6 +77,14 @@
 				<dict>
 					<key>begin</key>
 					<string>(\d+%|from|to)\s*{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.roole</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>}</string>
 					<key>patterns</key>
@@ -93,13 +101,13 @@
 			<key>match</key>
 			<string>\@[a-z-]+</string>
 			<key>name</key>
-			<string>keyword.control.at-rule.css</string>
+			<string>keyword.control.at-rule.roole</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>(\.|#|\[)[^ ){]+</string>
 			<key>name</key>
-			<string>constant.other.color.css</string>
+			<string>constant.other.color.roole</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -109,7 +117,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.roole</string>
+					<string>variable.other.readwrite.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -146,7 +154,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.class</string>
+					<string>support.class.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -179,7 +187,7 @@
 			<key>match</key>
 			<string>//.*</string>
 			<key>name</key>
-			<string>comment.line</string>
+			<string>comment.line.double-slash.roole</string>
 		</dict>
 		<key>constant</key>
 		<dict>
@@ -189,25 +197,25 @@
 					<key>match</key>
 					<string>#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(-|\+)?([0-9]*\.[0-9]+|[0-9]+)([a-z+]+|%)?</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>[a-zA-Z][A-Za-z._-]*</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>".*?"</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 			</array>
 		</dict>
@@ -218,7 +226,7 @@
 			<key>end</key>
 			<string>\)</string>
 			<key>name</key>
-			<string>punctuation.function.css</string>
+			<string>punctuation.function.roole</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -236,7 +244,7 @@
 			<key>match</key>
 			<string>\$[a-z0-9A-Z_-]+</string>
 			<key>name</key>
-			<string>variable.roole</string>
+			<string>variable.other.readwrite.roole</string>
 		</dict>
 		<key>variable_assignment</key>
 		<dict>
@@ -247,7 +255,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.roole</string>
+					<string>variable.other.readwrite.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
