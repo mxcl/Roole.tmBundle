@@ -7,7 +7,7 @@
 	<key>contactName</key>
 	<string>Max Howell</string>
 	<key>description</key>
-	<string>&lt;a href="http://rool.org"&gt;Roole&lt;/a&gt; is a language that compiles to CSS.
+	<string>&lt;a href="http://roole.org"&gt;Roole&lt;/a&gt; is a language that compiles to CSS.
 
 It drew many inspirations from other CSS preprocessing languages like Sass, LESS and Stylus.
 
