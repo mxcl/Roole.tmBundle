@@ -15,18 +15,28 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>(\$[a-z0-9A-Z_-]+)\s*=\s*(@function)</string>
+			<string>((\$)[a-z0-9A-Z_-]+)\s*(=)\s*(@function)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.roole</string>
+					<string>variable.other.readwrite.roole</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.at-rule.css</string>
+					<string>punctuation.definition.variable.roole</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.roole</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.at-rule.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -54,31 +64,81 @@
 		<dict>
 			<key>begin</key>
 			<string>/\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.begin.roole</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>\*/</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.end.roole</string>
+				</dict>
+			</dict>
 			<key>name</key>
-			<string>comment.block.scss</string>
+			<string>comment.block.roole</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(@keyframes)\s+.*?\s*{</string>
+			<string>(@keyframes)\s+.*?\s*({)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.at-rule.css</string>
+					<string>keyword.control.at-rule.roole</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.function.begin.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.function.end.roole</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(\d+%|from|to)\s*{</string>
+					<string>(\d+%|from|to)\s*({)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.roole</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.function.begin.roole</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.function.end.roole</string>
+						</dict>
+					</dict>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -90,30 +150,56 @@
 			</array>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.keyword.roole</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>\@[a-z-]+</string>
+			<string>(\@)[a-z-]+</string>
 			<key>name</key>
-			<string>keyword.control.at-rule.css</string>
+			<string>keyword.control.at-rule.roole</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>(\.|#|\[)[^ ){]+</string>
 			<key>name</key>
-			<string>constant.other.color.css</string>
+			<string>constant.other.color.roole</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(\$[a-z0-9A-Z_-]+):</string>
+			<string>((\$)[a-z0-9A-Z_-]+)(:)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.roole</string>
+					<string>variable.other.readwrite.roole</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.roole</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.terminator.statement.roole</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -140,17 +226,30 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>([a-z0-9A-Z_-]+):</string>
+			<string>([a-z0-9A-Z_-]+)(:)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.class</string>
+					<string>support.class.roole</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.terminator.statement.roole</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -176,38 +275,73 @@
 	<dict>
 		<key>comment</key>
 		<dict>
-			<key>match</key>
-			<string>//.*</string>
-			<key>name</key>
-			<string>comment.line</string>
+			<key>begin</key>
+			<string>(^[ \t]+)?(?=//)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.leading.roole</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?!\G)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>//</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.roole</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.number-sign.roole</string>
+				</dict>
+			</array>
 		</dict>
 		<key>constant</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.constant.roole</string>
+						</dict>
+					</dict>
 					<key>match</key>
-					<string>#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b</string>
+					<string>(#)([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(-|\+)?([0-9]*\.[0-9]+|[0-9]+)([a-z+]+|%)?</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>[a-zA-Z][A-Za-z._-]*</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>".*?"</string>
 					<key>name</key>
-					<string>constant.numeric.css</string>
+					<string>constant.numeric.roole</string>
 				</dict>
 			</array>
 		</dict>
@@ -218,7 +352,7 @@
 			<key>end</key>
 			<string>\)</string>
 			<key>name</key>
-			<string>punctuation.function.css</string>
+			<string>punctuation.function.roole</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -233,25 +367,51 @@
 		</dict>
 		<key>variable</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.roole</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>\$[a-z0-9A-Z_-]+</string>
+			<string>(\$)[a-z0-9A-Z_-]+</string>
 			<key>name</key>
-			<string>variable.roole</string>
+			<string>variable.other.readwrite.roole</string>
 		</dict>
 		<key>variable_assignment</key>
 		<dict>
 			<key>begin</key>
-			<string>(\$[a-z0-9A-Z_-]+)\s*=\s*</string>
+			<string>((\$)[a-z0-9A-Z_-]+)\s*(=)\s*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.roole</string>
+					<string>variable.other.readwrite.roole</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.roole</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.roole</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.terminator.expression.roole</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
